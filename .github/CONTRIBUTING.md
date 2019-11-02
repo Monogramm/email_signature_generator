@@ -17,7 +17,7 @@ Please, write [commit messages that make sense](http://tbaggery.com/2008/04/19/a
 
 You MUST use the `develop` branch as the base of your Pull Request.
 
-You MUST update the `CHANGELOG.md`, either manually or using [gitmoji-changelog](https://github.com/frinyvonnick/gitmoji-changelog).
+You MUST update the `CHANGELOG.md`, either manually by respecting [keep-a-changelog](https://github.com/olivierlacan/keep-a-changelog) or using [gitmoji-changelog](https://github.com/frinyvonnick/gitmoji-changelog).
 
 If possible, use [gitmoji](https://gitmoji.carloscuesta.me/) in your commit message to ease code reviews.
 

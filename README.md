@@ -7,7 +7,7 @@
 
 # Email Signature Generator
 
-:alembic: [POC] Test project for generating email signature using templates.
+> :alembic: **Experimental** Test project for generating email signature using templates.
 
 The aim for this project is to provide a simple web application to generate an email signature based on a template.
 The key features to develop are:
@@ -20,27 +20,37 @@ The key features to develop are:
 * allow multiple file formats for input and output (text only, HTML, Markdown)
 * add a Visit Card generator and PDF export
 
+
 For reference, the concept is similar to the following websites though our aim is to provide a simple solution to host privately:
 * https://webapp.wisestamp.com/
 * https://mysignature.io/editor
 * https://www.hubspot.fr/email-signature-generator
 
+
 ## :rocket: Usage
 
 **TODO**
 
-## :busts_in_silhouette: Contributing
+## :bust_in_silhouette: Author
 
-Contributions, issues and feature requests are welcome.<br />
-Feel free to check [issues page](https://github.com/kefranabg/readme-md-generator/issues) if you want to contribute.<br />
-[Check the contributing guide](./CONTRIBUTING.md).<br />
+**Monogramm**
+
+* Website: https://www.monogramm.io
+* Github: [@Monogramm](https://github.com/Monogramm)
+
+## :handshake: Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Monogramm/email_signature_generator/issues).
+[Check the contributing guide](./.github/CONTRIBUTING.md).<br />
 
 ## :thumbsup: Show your support
 
-Please :star: this repository if this project helped you!
+Give a :star: if this project helped you!
 
 ## :page_facing_up: License
 
 Copyright © 2019 [Monogramm](https://github.com/Monogramm).<br />
-This project is [AGPL v3][uri_license] licensed.
+This project is [AGPL v3](uri_license) licensed.
 
+***
+_This README was generated with :heart: by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
