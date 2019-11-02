@@ -3,11 +3,27 @@
 [uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
 
 [![License: AGPL v3][uri_license_image]][uri_license]
-[![Managed with Taiga.io](https://img.shields.io/badge/managed%20with-TAIGA.io-709f14.svg)](https://tree.taiga.io/project/monogrammbot-monogrammerpnext_autoinstall/ "Managed with Taiga.io")
+[![Managed with Taiga.io](https://img.shields.io/badge/managed%20with-TAIGA.io-709f14.svg)](https://tree.taiga.io/project/monogrammbot-monogrammemail_signature_generator/ "Managed with Taiga.io")
 
 # Email Signature Generator
 
 :alembic: [POC] Test project for generating email signature using templates.
+
+The aim for this project is to provide a simple web application to generate an email signature based on a template.
+The key features to develop are:
+* automatically encode in base64 images uploaded (company logo or profile picture)
+* allow an admin to setup default templates the users can choose from
+* allow a connection to LDAP server(s):
+    * to secure the app (only allow authenticated users to generate signature)
+    * retrieve automatically the personal information from the LDAP (admin could define the fields mapping)
+    * allow the user to save in their LDAP profile the personal information they entered in the form
+* allow multiple file formats for input and output (text only, HTML, Markdown)
+* add a Visit Card generator and PDF export
+
+For reference, the concept is similar to the following websites though our aim is to provide a simple solution to host privately:
+* https://webapp.wisestamp.com/
+* https://mysignature.io/editor
+* https://www.hubspot.fr/email-signature-generator
 
 ## :rocket: Usage
 
