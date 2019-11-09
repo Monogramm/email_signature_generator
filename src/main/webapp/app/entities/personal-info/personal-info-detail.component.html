@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="personalInfo">
+            <h2><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.detail.title">Personal Info</span> {{personalInfo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{personalInfo.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{personalInfo.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.jobTitle">Job Title</span></dt>
+                <dd>
+                    <span>{{personalInfo.jobTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.service">Service</span></dt>
+                <dd>
+                    <span>{{personalInfo.service}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.companyName">Company Name</span></dt>
+                <dd>
+                    <span>{{personalInfo.companyName}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{personalInfo.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.mobileNumber">Mobile Number</span></dt>
+                <dd>
+                    <span>{{personalInfo.mobileNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.website">Website</span></dt>
+                <dd>
+                    <span>{{personalInfo.website}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.emailAddress">Email Address</span></dt>
+                <dd>
+                    <span>{{personalInfo.emailAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.address">Address</span></dt>
+                <dd>
+                    <span>{{personalInfo.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.user">User</span></dt>
+                <dd>
+                    {{personalInfo.user?.id}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/personal-info', personalInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

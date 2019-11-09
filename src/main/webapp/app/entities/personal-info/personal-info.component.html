@@ -1,0 +1,80 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="emailSignatureGeneratorApp.personalInfo.home.title">Personal Infos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-personal-info" [routerLink]="['/personal-info/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="emailSignatureGeneratorApp.personalInfo.home.createLabel">
+            Create a new Personal Info
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="personalInfos?.length === 0">
+        <span jhiTranslate="emailSignatureGeneratorApp.personalInfo.home.notFound">No personalInfos found</span>
+    </div>
+    <div class="table-responsive" *ngIf="personalInfos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.firstName">First Name</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.lastName">Last Name</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.jobTitle">Job Title</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.service">Service</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.companyName">Company Name</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.phoneNumber">Phone Number</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.mobileNumber">Mobile Number</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.website">Website</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.emailAddress">Email Address</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.address">Address</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.personalInfo.user">User</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let personalInfo of personalInfos ;trackBy: trackId">
+                <td><a [routerLink]="['/personal-info', personalInfo.id, 'view' ]">{{personalInfo.id}}</a></td>
+                <td>{{personalInfo.firstName}}</td>
+                <td>{{personalInfo.lastName}}</td>
+                <td>{{personalInfo.jobTitle}}</td>
+                <td>{{personalInfo.service}}</td>
+                <td>{{personalInfo.companyName}}</td>
+                <td>{{personalInfo.phoneNumber}}</td>
+                <td>{{personalInfo.mobileNumber}}</td>
+                <td>{{personalInfo.website}}</td>
+                <td>{{personalInfo.emailAddress}}</td>
+                <td>{{personalInfo.address}}</td>
+                <td>
+                    {{personalInfo.user?.id}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/personal-info', personalInfo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/personal-info', personalInfo.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/personal-info', { outlets: { popup: personalInfo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
