@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="emailSignature">
+            <h2><span jhiTranslate="emailSignatureGeneratorApp.emailSignature.detail.title">Email Signature</span> {{emailSignature.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.emailSignature.template">Template</span></dt>
+                <dd>
+                    <span>{{emailSignature.template}}</span>
+                </dd>
+                <dt><span jhiTranslate="emailSignatureGeneratorApp.emailSignature.user">User</span></dt>
+                <dd>
+                    {{emailSignature.user?.id}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+        </div>
+    </div>
+</div>

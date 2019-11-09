@@ -1,0 +1,23 @@
+{
+  "emailSignatureGeneratorApp": {
+    "emailSignature": {
+      "home": {
+        "title": "Email Signatures",
+        "createLabel": "Создать новый Email Signature",
+        "createOrEditLabel": "Создать или отредактировать Email Signature",
+        "notFound": "No Email Signatures found"
+      },
+      "created": "Новый Email Signature создан с идентификатором {{ param }}",
+      "updated": "Email Signature обновлен с идентификатором {{ param }}",
+      "deleted": "Email Signature удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Email Signature {{ id }}?"
+      },
+      "detail": {
+        "title": "Email Signature"
+      },
+      "template": "Template",
+      "user": "User"
+    }
+  }
+}

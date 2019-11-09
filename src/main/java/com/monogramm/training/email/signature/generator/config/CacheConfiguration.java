@@ -42,6 +42,8 @@ public class CacheConfiguration {
             createCache(cm, com.monogramm.training.email.signature.generator.domain.User.class.getName());
             createCache(cm, com.monogramm.training.email.signature.generator.domain.Authority.class.getName());
             createCache(cm, com.monogramm.training.email.signature.generator.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.monogramm.training.email.signature.generator.domain.PersonalInfo.class.getName());
+            createCache(cm, com.monogramm.training.email.signature.generator.domain.EmailSignature.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
