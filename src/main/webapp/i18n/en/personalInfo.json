@@ -13,6 +13,9 @@
       "delete": {
         "question": "Are you sure you want to delete Personal Info {{ id }}?"
       },
+      "action": {
+        "use": "Use this data"
+      },
       "detail": {
         "title": "Personal Info"
       },

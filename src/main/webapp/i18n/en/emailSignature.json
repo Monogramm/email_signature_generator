@@ -7,6 +7,9 @@
         "createOrEditLabel": "Create or edit a Email Signature",
         "notFound": "No Email Signatures found"
       },
+      "action": {
+        "use": "Use this template"
+      },
       "created": "A new Email Signature is created with identifier {{ param }}",
       "updated": "A Email Signature is updated with identifier {{ param }}",
       "deleted": "A Email Signature is deleted with identifier {{ param }}",

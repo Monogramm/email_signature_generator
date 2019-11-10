@@ -5,12 +5,14 @@ import com.monogramm.training.email.signature.generator.domain.User;
 import com.monogramm.training.email.signature.generator.repository.EmailSignatureRepository;
 import com.monogramm.training.email.signature.generator.repository.UserRepository;
 import com.monogramm.training.email.signature.generator.security.SecurityUtils;
+import com.monogramm.training.email.signature.generator.service.EmailTemplateService;
 import com.monogramm.training.email.signature.generator.web.rest.errors.BadRequestAlertException;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -37,10 +39,13 @@ public class EmailSignatureResource {
 
     private final EmailSignatureRepository emailSignatureRepository;
     private final UserRepository userRepository;
+    private final EmailTemplateService emailTemplateService;
 
-    public EmailSignatureResource(EmailSignatureRepository emailSignatureRepository, UserRepository userRepository) {
+    public EmailSignatureResource(EmailSignatureRepository emailSignatureRepository,
+                                  UserRepository userRepository, EmailTemplateService emailTemplateService) {
         this.emailSignatureRepository = emailSignatureRepository;
         this.userRepository = userRepository;
+        this.emailTemplateService = emailTemplateService;
     }
 
     /**
@@ -89,6 +94,20 @@ public class EmailSignatureResource {
     }
 
     /**
+     * {@code GET /email-signatures/:signatureId/with/personal-info/:infoId} : fill "signatureId" template with "infoId" personalInfo
+     *
+     * @param templateId the id of emailSignature-template to use
+     * @param infoId     the id of personalInfo to fill
+     * @return filled template
+     */
+    @GetMapping(value = "/email-signatures/{signatureId}/with/personal-info/{infoId}", produces = MediaType.TEXT_PLAIN_VALUE)
+    public ResponseEntity<String> generateEmailSignature(@PathVariable("signatureId") Long templateId,
+                                                         @PathVariable("infoId") Long infoId) {
+        String email = emailTemplateService.template(templateId).apply(emailTemplateService.personalInfoById(infoId));
+        return ResponseEntity.ok(email);
+    }
+
+    /**
      * {@code DELETE  /email-signatures/:id} : delete the "id" emailSignature.
      *
      * @param id the id of the emailSignature to delete.
@@ -96,6 +115,7 @@ public class EmailSignatureResource {
      */
     @PreAuthorize("isAuthenticated()")
     @DeleteMapping("/email-signatures/{id}")
+
     public ResponseEntity<Void> deleteEmailSignature(@PathVariable Long id) {
         log.debug("REST request to delete EmailSignature : {}", id);
         emailSignatureRepository.deleteById(id);

@@ -7,6 +7,8 @@ import { EmailSignatureDetailComponent } from './email-signature-detail.componen
 import { EmailSignatureUpdateComponent } from './email-signature-update.component';
 import { EmailSignatureDeletePopupComponent, EmailSignatureDeleteDialogComponent } from './email-signature-delete-dialog.component';
 import { emailSignatureRoute, emailSignaturePopupRoute } from './email-signature.route';
+import { PersonalInfoSelectorComponent } from 'app/entities/email-signature/personal-info-selector.component';
+import { GeneratedEmailComponent } from 'app/entities/email-signature/generated-email.component';
 
 const ENTITY_STATES = [...emailSignatureRoute, ...emailSignaturePopupRoute];
 
@@ -17,7 +19,9 @@ const ENTITY_STATES = [...emailSignatureRoute, ...emailSignaturePopupRoute];
     EmailSignatureDetailComponent,
     EmailSignatureUpdateComponent,
     EmailSignatureDeleteDialogComponent,
-    EmailSignatureDeletePopupComponent
+    EmailSignatureDeletePopupComponent,
+    PersonalInfoSelectorComponent,
+    GeneratedEmailComponent
   ],
   entryComponents: [EmailSignatureDeleteDialogComponent]
 })

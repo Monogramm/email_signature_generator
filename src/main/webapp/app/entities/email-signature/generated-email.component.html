@@ -1,0 +1,18 @@
+<div>
+    <h2 id="page-heading">
+        <span>Email</span>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+
+    <hr>
+    <pre>{{email}}</pre>
+    <hr>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+</div>
