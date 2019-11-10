@@ -1,0 +1,26 @@
+{
+  "emailSignatureGeneratorApp": {
+    "emailSignature": {
+      "home": {
+        "title": "Email Signatures",
+        "createLabel": "Create a new Email Signature",
+        "createOrEditLabel": "Create or edit a Email Signature",
+        "notFound": "No Email Signatures found"
+      },
+      "action": {
+        "use": "Use this template"
+      },
+      "created": "A new Email Signature is created with identifier {{ param }}",
+      "updated": "A Email Signature is updated with identifier {{ param }}",
+      "deleted": "A Email Signature is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Email Signature {{ id }}?"
+      },
+      "detail": {
+        "title": "Email Signature"
+      },
+      "template": "Template",
+      "user": "User"
+    }
+  }
+}

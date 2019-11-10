@@ -1,0 +1,11 @@
+version: '2'
+services:
+  email_signature_generator-postgresql:
+    image: postgres:11.5
+    # volumes:
+    #     - ~/volumes/jhipster/email_signature_generator/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=email_signature_generator
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432

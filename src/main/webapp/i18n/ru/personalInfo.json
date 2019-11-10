@@ -1,0 +1,35 @@
+{
+  "emailSignatureGeneratorApp": {
+    "personalInfo": {
+      "home": {
+        "title": "Personal Infos",
+        "createLabel": "Создать новый Personal Info",
+        "createOrEditLabel": "Создать или отредактировать Personal Info",
+        "notFound": "No Personal Infos found"
+      },
+      "created": "Новый Personal Info создан с идентификатором {{ param }}",
+      "updated": "Personal Info обновлен с идентификатором {{ param }}",
+      "deleted": "Personal Info удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Personal Info {{ id }}?"
+      },
+      "action": {
+        "use": "Использовать эти данные"
+      },
+      "detail": {
+        "title": "Personal Info"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "jobTitle": "Job Title",
+      "service": "Service",
+      "companyName": "Company Name",
+      "phoneNumber": "Phone Number",
+      "mobileNumber": "Mobile Number",
+      "website": "Website",
+      "emailAddress": "Email Address",
+      "address": "Address",
+      "user": "User"
+    }
+  }
+}

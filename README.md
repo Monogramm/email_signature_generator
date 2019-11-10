@@ -4,6 +4,7 @@
 
 [![License: AGPL v3][uri_license_image]][uri_license]
 [![Managed with Taiga.io](https://img.shields.io/badge/managed%20with-TAIGA.io-709f14.svg)](https://tree.taiga.io/project/monogrammbot-monogrammemail_signature_generator/ "Managed with Taiga.io")
+[![Build Status](https://travis-ci.org/Monogramm/email_signature_generator.svg)](https://travis-ci.org/Monogramm/email_signature_generator)
 
 # Email Signature Generator
 
@@ -26,10 +27,21 @@ For reference, the concept is similar to the following websites though our aim i
 * https://mysignature.io/editor
 * https://www.hubspot.fr/email-signature-generator
 
+**:construction: This project is still in development!!**
 
 ## :rocket: Usage
 
-**TODO**
+In development:
+```sh
+mvn
+```
+
+In production:
+```sh
+mvn -Pprod
+```
+
+Look at [README.jhipster.md](./README.jhipster.md) for usage details.
 
 ## :bust_in_silhouette: Author
 
@@ -37,6 +49,10 @@ For reference, the concept is similar to the following websites though our aim i
 
 * Website: https://www.monogramm.io
 * Github: [@Monogramm](https://github.com/Monogramm)
+
+**Dmitry Barskov**
+
+* Github: [@Dimanaux](https://github.com/Dimanaux)
 
 ## :handshake: Contributing
 

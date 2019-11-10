@@ -1,0 +1,21 @@
+entity PersonalInfo {
+    firstName String required
+    lastName String required
+    jobTitle String
+    service String
+    companyName String
+    phoneNumber String
+    mobileNumber String
+    website String
+    emailAddress String required
+    address String
+}
+
+entity EmailSignature {
+	template TextBlob required
+}
+
+relationship ManyToOne {
+	PersonalInfo to User,
+    EmailSignature to User
+}

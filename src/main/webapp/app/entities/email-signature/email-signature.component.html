@@ -1,0 +1,56 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="emailSignatureGeneratorApp.emailSignature.home.title">Email Signatures</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-email-signature" [routerLink]="['/email-signature/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="emailSignatureGeneratorApp.emailSignature.home.createLabel">
+            Create a new Email Signature
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="emailSignatures?.length === 0">
+        <span jhiTranslate="emailSignatureGeneratorApp.emailSignature.home.notFound">No emailSignatures found</span>
+    </div>
+    <div class="table-responsive" *ngIf="emailSignatures?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.emailSignature.template">Template</span></th>
+            <th scope="col" ><span jhiTranslate="emailSignatureGeneratorApp.emailSignature.user">User</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let emailSignature of emailSignatures ;trackBy: trackId">
+                <td><a [routerLink]="['/email-signature', emailSignature.id, 'view' ]">{{emailSignature.id}}</a></td>
+                <td>{{emailSignature.template}}</td>
+                <td>
+                    {{emailSignature.user?.id}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/email-signature', emailSignature.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/email-signature', { outlets: { popup: emailSignature.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
