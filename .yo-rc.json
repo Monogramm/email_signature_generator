@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.monogramm.training.email.signature.generator",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.4.1",
+    "applicationType": "monolith",
+    "baseName": "email_signature_generator",
+    "packageName": "com.monogramm.training.email.signature.generator",
+    "packageFolder": "com/monogramm/training/email/signature/generator",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmEyMzU1NzRlZTJlZTk2NTUwYWZmNTNlZTNmODNiZmRkZTk1YTg1ZDBlODE5Y2JjNjBmM2YxNzQ3YWM1YmI0YjdmOTU0Mzk4MDlkZTk5ZjYxZmMwMTliZDg2MGNjMWRiZTIwMWU5ZTY5MGI1ZDZkYWY2MjUxMzcyYmJkMWEyOWU=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "fr", "ru"],
+    "blueprints": []
+  }
+}
