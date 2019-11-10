@@ -11,6 +11,8 @@ import { EmailSignatureDetailComponent } from './email-signature-detail.componen
 import { EmailSignatureUpdateComponent } from './email-signature-update.component';
 import { EmailSignatureDeletePopupComponent } from './email-signature-delete-dialog.component';
 import { IEmailSignature } from 'app/shared/model/email-signature.model';
+import { PersonalInfoSelectorComponent } from './personal-info-selector.component';
+import { GeneratedEmailComponent } from 'app/entities/email-signature/generated-email.component';
 
 @Injectable({ providedIn: 'root' })
 export class EmailSignatureResolve implements Resolve<IEmailSignature> {
@@ -72,6 +74,16 @@ export const emailSignatureRoute: Routes = [
       authorities: ['ROLE_USER'],
       pageTitle: 'emailSignatureGeneratorApp.emailSignature.home.title'
     },
+    canActivate: [UserRouteAccessService]
+  },
+  {
+    path: ':id/with/personal-info',
+    component: PersonalInfoSelectorComponent,
+    canActivate: [UserRouteAccessService]
+  },
+  {
+    path: ':signatureId/with/personal-info/:infoId',
+    component: GeneratedEmailComponent,
     canActivate: [UserRouteAccessService]
   }
 ];

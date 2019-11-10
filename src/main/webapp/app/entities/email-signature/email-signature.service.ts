@@ -35,4 +35,9 @@ export class EmailSignatureService {
   delete(id: number): Observable<HttpResponse<any>> {
     return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
+
+  generate(emailSignatureId: number, personalInfoId: number): Observable<any> {
+    const url = `${this.resourceUrl}/${emailSignatureId}/with/personal-info/${personalInfoId}`;
+    return this.http.get(url, { observe: 'response', responseType: 'text' });
+  }
 }

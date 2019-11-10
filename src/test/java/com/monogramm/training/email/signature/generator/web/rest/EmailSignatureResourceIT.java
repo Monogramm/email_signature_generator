@@ -4,6 +4,7 @@ import com.monogramm.training.email.signature.generator.EmailSignatureGeneratorA
 import com.monogramm.training.email.signature.generator.domain.EmailSignature;
 import com.monogramm.training.email.signature.generator.repository.EmailSignatureRepository;
 import com.monogramm.training.email.signature.generator.repository.UserRepository;
+import com.monogramm.training.email.signature.generator.service.EmailTemplateService;
 import com.monogramm.training.email.signature.generator.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -44,6 +45,9 @@ public class EmailSignatureResourceIT {
     private UserRepository userRepository;
 
     @Autowired
+    private EmailTemplateService emailTemplateService;
+
+    @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
 
     @Autowired
@@ -65,7 +69,7 @@ public class EmailSignatureResourceIT {
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final EmailSignatureResource emailSignatureResource = new EmailSignatureResource(emailSignatureRepository, userRepository);
+        final EmailSignatureResource emailSignatureResource = new EmailSignatureResource(emailSignatureRepository, userRepository, emailTemplateService);
         this.restEmailSignatureMockMvc = MockMvcBuilders.standaloneSetup(emailSignatureResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)

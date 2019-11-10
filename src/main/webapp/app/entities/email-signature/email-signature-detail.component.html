@@ -7,7 +7,7 @@
             <dl class="row-md jh-entity-details">
                 <dt><span jhiTranslate="emailSignatureGeneratorApp.emailSignature.template">Template</span></dt>
                 <dd>
-                    <span>{{emailSignature.template}}</span>
+                    <pre>{{emailSignature.template}}</pre>
                 </dd>
                 <dt><span jhiTranslate="emailSignatureGeneratorApp.emailSignature.user">User</span></dt>
                 <dd>
@@ -19,6 +19,11 @@
                     (click)="previousState()"
                     class="btn btn-info">
                 <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+            <button type="submit"
+                    [routerLink]="['/email-signature', emailSignature.id, 'with', 'personal-info']"
+                    class="btn btn-outline-success">
+                <span jhiTranslate="emailSignatureGeneratorApp.emailSignature.action.use"> Use</span>
             </button>
         </div>
     </div>
