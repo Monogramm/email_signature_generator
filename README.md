@@ -31,7 +31,7 @@ For reference, the concept is similar to the following websites though our aim i
 
 ## :rocket: Usage
 
-**TODO**
+Look at [README.jhipster.md](./README.jhipster.md) for usage details.
 
 ## :bust_in_silhouette: Author
 
@@ -39,6 +39,10 @@ For reference, the concept is similar to the following websites though our aim i
 
 * Website: https://www.monogramm.io
 * Github: [@Monogramm](https://github.com/Monogramm)
+
+**Dimanaux**
+
+* Github: [@Dimanaux](https://github.com/Dimanaux)
 
 ## :handshake: Contributing
 
